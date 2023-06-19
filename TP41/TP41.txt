@@ -1,0 +1,20 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+int numero (int a);
+int main ()
+{
+	int n;
+	printf ("ingrese un numero: ");
+	fflush (stdin);
+	scanf ("%i", &n);
+	numero(n);
+	return (0);
+}
+int numero (int a)
+{
+	int solucion1, solucion2;
+	printf ("el perietro es: %i \n", a*a*a*a);
+	printf ("la superficie es: %i \n", a*a);
+}
