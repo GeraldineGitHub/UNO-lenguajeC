@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+void main()
+{
+	float a,b,apot,bpot,suma,cpot;
+	
+	printf("\n Ingrese el valor del cateto opuesto:");
+	fflush(stdin);
+	scanf("%f",&a);
+	printf("\n Ingrese el valor del cateto adyacente:");
+	fflush(stdin);
+	scanf("%f",&b);
+	
+	apot= pow(a,2);
+	bpot= pow(b,2);
+	suma= apot+bpot;
+	cpot= pow(suma,0.5);
+	printf("\n El valor de la hipotenusa es: %f",cpot);
+	getch();
+}
