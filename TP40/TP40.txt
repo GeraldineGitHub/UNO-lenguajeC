@@ -1,0 +1,28 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+int numeropar (int a);
+int main ()
+{
+	int i, cont; 
+	for (i=1; i<=200; i++)
+	{
+		if (numeropar(i) == 1){
+	printf ("%i \n", i);
+	cont =+ i;
+	}
+    }
+    printf ("la suma de los numeros pares es: %i \n", &cont);
+    return (0);
+}
+int numeropar (int a)
+{
+	if ((a%2)==0)
+	{
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
