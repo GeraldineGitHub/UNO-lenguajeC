@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int ingreso (); 
+void  intercambiarvalores (int a, int b);
+
+int main ()
+{
+	int n1, n2;
+	
+	printf ("\n ingrese primer numero ");
+	fflush (stdin);
+	n1 = ingreso();
+	
+	printf ("\n ingrese segundo numero ");
+	fflush (stdin);
+	n2 = ingreso();
+	
+	intercambiarvalores (n1, n2);
+}
+int ingreso ()
+{
+	int numero;
+	fflush (stdin);
+	scanf ("%d", &numero);
+	return numero;
+}
+void intercambiarvalores(int a, int b)
+{
+	int auxiliar;
+	
+	auxiliar = a;
+	a = b;
+	b = auxiliar; 
+	printf ("el primer valor es: %d \n", a);
+	printf ("el segundo valor es: %d \n", b);
+
+}
