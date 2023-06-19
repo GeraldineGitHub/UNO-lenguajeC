@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int a,b, resultado;
+	
+	fflush(stdin);
+	printf("ingrese el total de alumnos: \n");
+    scanf("%i",&a);
+    
+	system("cls");
+	
+	if (a>=35)
+	{
+	printf("\n curso numeroso");
+	}
+	if (a<35)
+	{
+	resultado=a*35;
+	printf("\n debera pagar %i",resultado);
+	}
+	
+	return(0);
+}	
