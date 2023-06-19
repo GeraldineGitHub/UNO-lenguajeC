@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+#include <stdlib.h>
+ 
+ int main ()
+ 
+{
+	float a,b, respuesta;
+	char c; 
+	
+	fflush (stdin);
+	printf ("ingrese un numero: \n");
+	scanf ("%f" ,&a);
+	
+	system ("cls");
+	
+	fflush (stdin);
+	printf ("ingrese segundo numero: \n");
+	scanf ("%f",&b);
+	
+	fflush (stdin);
+	printf ("ingrese la operacion que desea realizar, siendo s= suma, r= resta, m= multiplicacion, d= divicion: \n");
+	scanf ("%c", &c); 
+	
+	switch (c) {
+		case 's': 
+		respuesta = a + b;
+		break; 
+		case 'r':
+			respuesta = a - b;
+			break;
+			
+			case 'm': 
+			respuesta = a * b; 
+			break;
+			
+			case 'd':
+				respuesta = a/ b;
+					break;
+	}
+	printf ("\n el resultado de la operacion es: %.2f " , respuesta);
+	
+	return (0);
+}
