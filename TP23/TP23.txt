@@ -1,0 +1,47 @@
+#include <conio.h>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+	float i, edad, estatura, totaledad, totalestatura, promedioedad, promedioestatura, cantidadalumnos1, cantidadalumnos2;
+	
+	for (i=0; i<=6; i++)
+	{
+	
+	fflush (stdin);
+	printf ("\n ingrese la edad del alumno:");
+	scanf ("%f", &edad);
+	
+	system ("cls");
+	
+	fflush (stdin);
+	printf ("\n ingrese la estatura del alumno:");
+	scanf ("%f", &estatura);
+	
+	totaledad = totaledad + edad;
+    totalestatura = totalestatura + estatura;
+	
+    
+    if (edad>10)
+    {
+    	cantidadalumnos1 = cantidadalumnos1 + 1;
+	}
+	
+	if (estatura>1.40)
+	{
+		cantidadalumnos2 = cantidadalumnos2 + 1;
+	}
+}
+
+    promedioedad = totaledad / 6;
+    promedioestatura = totalestatura /6;
+	
+	printf ("\n la edad promedio es: %.2f", promedioedad);
+	printf ("\n la altura promedio es: %.2f", promedioestatura);
+	printf ("\n la cantidad de alumnos que miden mas de 1.40 son: %.2f",cantidadalumnos2 );
+	printf ("\n la cantidad de alumnos mayores a 10 anios son: %.2f ", cantidadalumnos1 );
+	
+	return (0);
+}
