@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+
+int main()
+{
+	int a,b,elevado;
+	
+	printf("ingrese base: \n");
+    fflush(stdin);
+    scanf("%i", &a);
+    system("CLS");    
+    
+    printf("ingrese raiz: \n");
+    scanf("%i", &b);
+    system("CLS");    
+    
+    elevado=rad(a,b);
+    
+    printf("\n el resultado de la raiz es: %i", elevado);
+    getch();
+    return(0);
+}
