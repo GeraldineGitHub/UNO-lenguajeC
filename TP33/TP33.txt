@@ -1,0 +1,35 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int numeropar (int a);
+
+int main ()
+{
+	int numero; 
+	
+	printf ("\n ingrese un numero: ");
+	fflush (stdin);
+	scanf ("%i", &numero);
+	
+	if (numeropar (numero) == 1) 
+	{
+		printf ("es par \n");
+	}
+	else 
+	{
+		printf ("es impar \n");
+	}
+}
+int numeropar (int a)
+{
+if ((a%2) ==0)
+{
+return 1;
+}
+else 
+{
+	return 0;
+}
+}
