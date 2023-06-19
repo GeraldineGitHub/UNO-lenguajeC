@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+#include <stdlib.h>
+int negativo (int n);
+int main()
+{
+	int numero;
+	printf ("\n ingrese un numero: ");
+	fflush (stdin);
+	scanf ("%i", &numero);
+	 if (negativo (numero) == 1)
+	 {
+	printf ("es negativo: \n ");
+	 }
+	else 
+	{
+	printf ("es positivo: \n ");
+	}
+}
+int negativo (int n)
+{
+	if (n < 0)
+	{
+		return 1;
+	}
+	else 
+	{
+		return 0;
+	}
+}
