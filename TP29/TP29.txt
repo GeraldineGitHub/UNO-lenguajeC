@@ -1,0 +1,61 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+main ()
+{
+	float  montofactura, totalfacturageneral, totalfactura1 = 0, totalfactura2 = 0, totalfactura3 = 0, totalfactura4 = 0;
+	int v, ndefactura;
+	int cantidadfactura1 = 0, cantidadfactura2 = 0, cantidadfactura3 = 0, cantidadfactura4 = 0;
+	
+	printf ("\n ingrese el numero de la factura: ");
+	fflush (stdin);
+	scanf ("%i", &ndefactura);
+	
+	while (ndefactura != 0)
+{
+	printf ("\n ingrese el numero del vendedor: ");
+	fflush (stdin);
+	scanf ("%f", &v);
+	
+	printf ("\n ingrese el monto de la factura: ");
+	fflush (stdin);
+	scanf ("%f", &montofactura);
+	
+	switch (v)
+{
+	case 1: cantidadfactura1 += 1;
+	        totalfactura1 += montofactura; 
+	        break; 
+	
+	case 2: cantidadfactura2 = cantidadfactura2 + 1;
+	        totalfactura2 = totalfactura2 + montofactura;
+	        break;
+	        
+	case 3: cantidadfactura3 = cantidadfactura3 + 1;
+	        totalfactura3 = totalfactura3 + montofactura;
+			break;
+			
+	case 4: cantidadfactura4 = cantidadfactura4 + 1;
+	        totalfactura4 = totalfactura4 + montofactura;
+			break;		       
+}
+ printf	("\n ingrese el numero de factura: ");
+ fflush (stdin);
+ scanf ("%i", &ndefactura);	
+}	
+totalfacturageneral = totalfactura1 + totalfactura2 + totalfactura3 + totalfactura4;
+
+ printf	("\n las facturas que emitio el primer vendedor fueron: %i",cantidadfactura1);
+ printf	("\n las facturas que emitio el segundo vendedor fueron: %i",cantidadfactura2);
+ printf	("\n las facturas que emitio el tercer vendedor fueron: %i",cantidadfactura3);
+ printf	("\n las facturas que emitio el cuarto vendedor fueron: %i",cantidadfactura4);
+ printf	("\n el total final acumulado del primer vendedor es: %.2f",totalfactura1);
+ printf	("\n el total final acumulado del segundo vendedor es: %.2f",totalfactura2);
+ printf	("\n el total final acumulado del tercer vendedor es: %.2f",totalfactura3);
+ printf	("\n el total final acumulado del cuarto vendedor es: %.2f",totalfactura4);
+  printf	("\n el total facturado: %.2f",totalfacturageneral);
+  
+	return (0);
+}
