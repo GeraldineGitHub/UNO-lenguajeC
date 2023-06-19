@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <conio.h>
+
+int main ()
+{
+	float a, b, valorhoras, sueldo;
+	char c;
+	
+	fflush (stdin);
+	printf ("ingrese la cantidad de horas trabajadas: \n");
+	scanf ("%f", &a);
+	
+	fflush (stdin);
+	printf ("ingrese la antiguedad: \n");
+	scanf ("%f", &b);
+	
+	fflush (stdin);
+	printf ("ingrese la categoria: \n");
+	scanf ("%c", &c);
+	
+	system ("cls");
+	
+	switch (c)
+	{
+		case 1:
+		valorhoras = a * 100;
+		break;
+		
+		case 2: 
+		valorhoras = a * 200;
+		break;
+		
+		case 3: 
+		valorhoras = a * 250;
+		break; 
+		
+		case 4: 
+		valorhoras = a * 300; 
+		break; 
+	}
+	sueldo = valorhoras + (b * 650);
+	
+	if (sueldo>=20000)
+	{
+		printf ("\n el sueldo supera los 20 mil: %.2f", sueldo);
+	}
+	printf ("\n el sueldo del empleado es: %.2f ",sueldo);
+	
+	return (0);
+}
