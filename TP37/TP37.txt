@@ -1,0 +1,69 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+int cobroantiguedad (int a);
+int cobrohoras (int b, int c);
+
+int main ()
+{
+	int htrab, ant, cat, sueldo, resultado, valorhoras;  
+	printf ("ingrese horas trabajadas: \n ");
+	fflush (stdin);
+	scanf ("%i", &htrab);
+	
+	printf ("ingrese la antiguedad: \n ");
+	fflush (stdin);
+	scanf ("%i", &ant);
+	cobroantiguedad (ant);
+	
+	printf ("ingrese su categoria: \n ");
+	fflush (stdin);
+	scanf ("%i", &valorhoras);	
+	cobrohoras (htrab, cat);
+	
+	resultado = ((cobroantiguedad(ant))+ (cobrohoras(htrab,cat)));
+
+printf ("el sueldo del empleado es: \n %i ", resultado);
+
+if (resultado > 1000)
+{
+	printf (" \n el sueldo supera los 1000 pesos: %i", resultado);
+}
+else 
+{
+	printf (" \n el sueldo no supera los 1000 pesos: %i", resultado );
+}
+
+system ("pause");
+	return (0);
+}
+int cobroantiguedad (int a)
+{
+	int resultado; 
+	resultado = 50 * a;
+	return resultado;
+}
+int cobrohoras (int b, int c)
+{
+	int valorhoras;
+	switch (c)
+	{
+	case 1: 
+	valorhoras = b * 10;
+	break; 
+	
+	case 2: 
+	valorhoras = b * 20;
+	break; 
+	
+	case 3: 
+	valorhoras = b * 25;
+	break; 
+	
+	case 4: 
+	valorhoras = b * 30;
+	break; 
+    }
+	return (valorhoras);
+}
