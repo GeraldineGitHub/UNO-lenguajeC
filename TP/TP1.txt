@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+int main()
+{
+    
+	char nom[20], ape[20];
+    int edad, tel;
+    
+    printf("ingrese su nombre: \n");
+    fflush(stdin);
+    gets(nom);
+    // scanf("%s", nom);
+    system("CLS");
+    printf("\n Ingrese su apellido: \n");
+    fflush(stdin);
+    scanf("%s",ape);
+    system("CLS");
+    printf("\n Ingrese su edad: \n");
+    fflush(stdin);
+    scanf("%d", &edad);
+    system("CLS");
+    printf("\n Ingrese su telefono: \n");
+    fflush(stdin);
+    scanf("%d", &tel);
+    system("CLS");
+    
+    printf("\n Su nombre es: %s", nom);
+    printf("\n El apellido es: %s", ape);
+    printf("\n Su edad es: %d", edad);
+    printf("\n Su numero de telefono es: %d", tel);
+    getch();
+
+}
