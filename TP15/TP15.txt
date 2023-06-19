@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int a,b;
+	
+	fflush(stdin);
+	printf("ingrese la nota del alumno: \n");
+    scanf("%i",&a);
+    
+	system("cls");
+	
+	if (a>=7)
+	{
+	printf("\n aprobo");
+	}
+	if (a<7)
+	{
+	printf("\n no aprobo");
+	}
+	return(0);
+}	
