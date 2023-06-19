@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+
+int main()
+{
+	float a,b,c;
+	
+	printf("ingrese primer numero: \n");
+    fflush(stdin);
+    scanf("%f", &a);
+    system("CLS");
+    
+    printf("ingrese segundo numero: \n");
+    scanf("%f", &b);
+    system("CLS"); 
+    
+    printf("ingrese tercer numero: \n");
+    scanf("%f", &c);
+    system("CLS"); 
+    
+    
+     printf("\n el doble del primer numero es : %f", 2*a);
+     printf("\n el doble del segundo numero es : %f", 2*b);
+     printf("\n el doble del tercer numero es : %f", 2*c);
+     printf("\n el triple del primer numero es : %f", 3*a);
+     printf("\n el triple del segundo numero es : %f", 3*b);
+     printf("\n el triple del tercer numero es : %f", 3*c);
+     printf("\n la mitad del primer numero es : %f", a/2);
+     printf("\n la mitad del segundo numero es : %f", b/2);
+     printf("\n la mitad del tercer numero es : %f", c/2);
+     
+       getch();
+return(0);
+}
