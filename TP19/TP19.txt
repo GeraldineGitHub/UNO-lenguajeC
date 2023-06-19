@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <math.h>
+
+int main ()
+{
+	float a,b,c; 
+	
+	fflush (stdin);
+	printf ("ingrese el primer numero: \n");
+	scanf ("%f", &a);
+	
+	system ("cls");
+	
+	fflush (stdin);
+	printf ("ingrese el segundo numero: \n");
+	scanf ("%f", &b);
+	
+	fflush (stdin);
+	printf ("ingrese el tercer numero: \n");
+	scanf ("%f", &c); 
+	
+	if ((a==b)&&(a==c))
+	{
+		printf ("\n es un triangulo equilatero: ");
+	}
+	else if ((a==b) || (a==c) || (b==c))
+	{
+		printf ("\n es un triangulo isosceles: ");
+	}
+	else 
+	{ printf ("\n es un triangulo escaleno"); //lados desiguales
+	}
+	
+	return (0);
+}
