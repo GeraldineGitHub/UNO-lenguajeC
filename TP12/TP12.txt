@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int a,b,c;
+	
+	fflush(stdin);
+	printf("ingrese el primer numero: \n");
+    scanf("%i",&a);
+    
+    fflush(stdin);
+    printf("ingrese el segundo numero: \n");
+    scanf("%i",&b);
+      
+    fflush(stdin);
+    printf("ingrese el tercer numero: \n");
+    scanf("%i",&c);
+    system("cls");
+    
+    if (a<b)
+	{
+	if (b<c)	
+	{
+	printf("\n los numeros estan en orden ascendente");
+	}
+    
+	}
+	
+	return(0);
+}
