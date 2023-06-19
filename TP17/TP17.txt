@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int a;
+	
+	fflush(stdin);
+	printf("ingrese un numero: \n");
+    scanf("%i",&a);
+    
+	system("cls");
+	
+	if (a==0)
+	{
+	printf("\n el numero es nulo");
+	}
+	if (a>0)
+	{
+	printf("\n el numero es positivo");
+    }
+	if (a<0)
+	{
+	printf("\n el numero es negativo");
+	}
+	
+	return 0;
+}	
