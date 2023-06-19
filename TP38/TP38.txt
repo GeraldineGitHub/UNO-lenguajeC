@@ -1,0 +1,42 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+int salario(int a);
+
+int main ()
+{
+	char respuesta;
+	int  horas, resultado;
+	
+	printf ("desea calcular otro salario: ");
+	fflush(stdin);
+	scanf("%c", &respuesta);
+	
+	while(respuesta == 's')
+	 {
+		printf ("ingrese horas del trabajador: ");
+		fflush(stdin);
+		scanf ("%i", &horas);
+		salario(horas);
+		printf ("el salario es: %i \n", salario(horas)); 
+		
+		printf ("desea calcular otro salario: ");
+		fflush(stdin);
+		scanf("%c", &respuesta);
+}
+  
+    system ("PAUSE"); 
+    return (0);
+}
+int salario(int a)
+{
+	int solucion;
+	if (a < 35) {
+		solucion=a*50;
+	}
+	else {
+		solucion=(a-35)*75;
+	}
+	return(solucion);
+}
