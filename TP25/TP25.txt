@@ -1,0 +1,33 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+
+{
+	float notas, notatotal, notapromedio, cantidadalumnos;
+	
+	
+	
+	while (notas != 0)
+	
+	{
+		
+		fflush (stdin);
+	printf ("\n ingrese nota del alumno: ");
+	scanf ("%f", &notas);
+	
+	system ("cls");
+		
+	notatotal += notas; 
+	cantidadalumnos += 1; 
+	notapromedio = notatotal / cantidadalumnos; 
+	
+	printf ("\n el promedio de notas es: %.2f", notapromedio);
+
+}
+	
+	
+	return (0);
+}
