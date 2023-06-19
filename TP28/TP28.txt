@@ -1,0 +1,32 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+	float nentero, cvalores, meorvalor, numeromin;
+	const int pi = 3.14;
+	
+	printf ("\n ingrese un numero: ");
+	fflush (stdin);
+	scanf ("%f", &nentero);
+	numeromin = nentero;
+	
+	while (nentero > 0)
+	{
+		if ( (nentero >= pi) && (nentero <= 3*pi))
+		cvalores += 1;
+		
+	if (nentero <= numeromin)
+	numeromin = nentero;
+	
+	printf ("\n ingrese un numero: ");
+	fflush (stdin);
+	scanf ("%f", &nentero);
+	}
+	printf ("\n la cantidad de valores entre pi y 3pi son: %.2f", cvalores);
+	printf ("\n el menor valor ingresado es %.2f", numeromin);
+	
+	return (0);
+}
