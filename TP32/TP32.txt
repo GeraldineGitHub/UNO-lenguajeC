@@ -1,0 +1,38 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+
+int area (int base, int altura);
+void mostrar (int area);
+
+int main ()
+{
+	int base1, altura1, base2, altura2, area1, area2, areatotal; 
+	
+	printf ("\n ingrese la base y altura de la primera area: ");
+	fflush (stdin);
+	scanf ("%i %i", &base1, &altura1);
+	
+	area1 = area (base1, altura1);
+	
+	printf ("\n ingrese la base y la altura de la segunda area: ");
+	fflush (stdin);
+	scanf ("%i %i", &base2, &altura2);
+	
+	area2 = area (base2, altura2);
+	areatotal = area1 + area2;
+	mostrar (areatotal);
+	return (0);
+}
+int area (int base, int altura)
+{
+int area; 
+
+area = base * altura; 
+return area; 
+}
+void mostrar (int area)
+{
+	printf ("el area de la figura es: %i \n", area);
+}
