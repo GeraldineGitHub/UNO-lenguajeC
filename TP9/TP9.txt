@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+
+int main()
+{
+	float a,b; 
+	
+	printf("ingrese el radio del cilindro: \n");
+    fflush(stdin);
+    scanf("%f", &a);
+    
+    printf("ingrese la altura del cilindro: \n");
+    fflush(stdin);
+    scanf("%f", &b);
+    
+     printf("\n el area del cilindro es : %f", (2*3.14*a*b)+(2*3.14*a*a) );
+     printf("\n el volumen del cilindro es : %f", (3.14*a*a*b) );
+     
+           getch();
+return(0);
+}
