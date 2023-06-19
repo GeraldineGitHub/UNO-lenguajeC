@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+int main()
+{
+	
+	int a,b,suma, resta, multiplicacion; 
+	float divicion;
+	
+    
+	printf("ingrese primer numero: \n");
+    fflush(stdin);
+    scanf("%d", &a);
+    
+    printf("\n Ingrese segundo numero: \n");
+    fflush(stdin);
+    scanf("%d", &b);
+    
+     suma=a+b;
+     resta=a-b;
+     multiplicacion=a*b;
+     divicion=a/b;
+    
+       printf("\n la suma de los dos numeros es: %d", suma);
+        printf("\n la resta de los dos numeros es: %d", resta);
+         printf("\n la multiplicacion de los dos numeros es: %d", multiplicacion);
+         printf("\n la divicion de los dos numeros es: %d", divicion);
+    
+    getch();
+return(0);
+
+}
