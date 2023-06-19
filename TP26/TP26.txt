@@ -1,0 +1,42 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+	float numero, na, nb, nc;
+	
+	while (numero != 0)
+	
+	{
+		
+	fflush (stdin);
+	printf ("\n ingrese un numero: ");
+	scanf ("%f", &numero);
+	
+	system ("cls");
+	
+	if (numero < 30) {
+	nc += 1;
+}
+
+else if (numero > 80) {
+
+	nb += 1; 
+}
+
+	else if ((numero > 50) && (numero < 75)) {
+	
+	na += 1;
+}
+
+   }
+	
+	printf ("\n los numeros que estan entre 50 y 75 son: %.2f", na);
+	printf ("\n los numeros mayores de 80 son: %.2f", nb);
+	printf ("\n los numeros menores de 30 son: %.2f", nc);
+
+	return (0);
+	
+}
