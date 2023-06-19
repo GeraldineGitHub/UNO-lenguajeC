@@ -1,0 +1,44 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+	float codigoarticulo, precio, preciomax, preciomin, codigomax, codigomin;
+	
+		fflush (stdin);
+		printf ("\n ingrese el codigo de articulo: ");
+		scanf ("%f", &codigoarticulo);
+		
+		fflush (stdin);
+		printf ("\n ingrese precio del articulo: ");
+		scanf ("%f", &precio);
+		
+		preciomax = precio;
+		codigomax = codigoarticulo; 
+		codigomin = codigoarticulo; 
+		preciomin = precio; 
+		
+		system ("cls");
+	
+	while (codigoarticulo != 0)
+	 {
+		
+		if (codigoarticulo > codigomax)
+		codigomax = codigoarticulo;
+		preciomax = precio;
+		
+		if (codigoarticulo < codigomin)
+	    codigomin = codigoarticulo; 
+	    preciomin = precio;
+	    
+	    fflush (stdin);
+		printf ("\n ingrese el codigo de articulo: ");
+		scanf ("%f", &codigoarticulo);
+}	    	
+    printf ("\n el codigo con el mayor precio es: %.2f", codigomax);
+	printf ("\n el codigo con menor precio es: %.2f", codigomin);
+	    
+	return (0);
+}
