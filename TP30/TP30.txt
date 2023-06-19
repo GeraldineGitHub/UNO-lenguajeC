@@ -1,0 +1,35 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int potencia (int base, int exponente);
+
+int main ()
+{
+	int base, exponente, resultado;
+	
+	printf ("\n ingrese la base: ");
+	fflush (stdin); 
+	scanf ("%i", &base);
+	
+	printf ("\n ingrese exponente: ");
+	fflush (stdin);
+	scanf ("%i", &exponente);
+	
+	resultado = potencia (base, exponente);
+	printf ("\n el resultado es: %i", resultado);
+	
+	return (0);
+}
+
+int potencia (int base, int exponente)
+{
+int i, acumulador; 
+acumulador = base; 
+for (i = 1; i < exponente; i++)
+{
+	acumulador *= base;
+}
+return acumulador; 
+}
