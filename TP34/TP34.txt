@@ -1,0 +1,29 @@
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int medida (int a, int b);
+int main ()
+{
+	int a, b;
+	
+	printf ("\n ingrese un numero: ");
+	fflush (stdin);
+	scanf ("%i", &a);
+	
+	printf ("\n ingrese otro numero: ");
+	fflush (stdin);
+	scanf ("%i", &b);
+	
+	printf ("la medida es: %i \n", medida(a,b);
+	
+	return (0);
+}
+int medida (int a, int b)
+{
+	int medida;
+	medida == a + b;
+	return (a + b);
+	
+}
