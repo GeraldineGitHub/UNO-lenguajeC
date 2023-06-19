@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <conio.h>
+
+int main ()
+{
+	int a, resultado;
+	
+	fflush (stdin);
+	printf ("ingrese el tiro alcanzado, siendo: \n");
+	scanf ("%i", &a);
+	
+	system ("cls");
+	
+    if (a==0)
+    {
+    	resultado = a*0;
+    	printf ("\n el puntaje obtenido es: %i", resultado);
+	}
+	else if ((a>=1) && (a<=5))
+	{
+		resultado = a*6;
+		printf (" \n el puntaje obtenido es: %i", resultado);
+	}
+	else if ((a>=6)&&(a<=8))
+	{
+		resultado = a*9;
+		printf ("\n el puntaje obtenido es: %i", resultado);
+	}
+	else if ((a>=9)&&(a<=10))
+	{
+		resultado = a*10;
+		printf ("\n el puntaje obtenido es:%i", resultado);
+	}
+    return (0);	
+	}
+	
