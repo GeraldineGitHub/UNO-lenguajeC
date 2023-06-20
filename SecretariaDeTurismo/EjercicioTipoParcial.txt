@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<conio.h>
+
+/*practico para el final secretaria de turismo con funcion menu */
+
+int menu(){
+	int opcion;
+		//Armo menu
+		printf("Bienvenido, seleccione una opcion\n");
+		printf("1 = Ingresar datos\n");
+		printf("2 = Mostrar resultados\n");
+		printf("3 = Salir\n");
+		fflush(stdin);
+		scanf("%i", &opcion);
+		return opcion;
+	}
+	
+void guardar_datos(int di, char cod, int via, int cantidad, int *vecDi, char *vecCod, int *vecVia, int *vecCantidad, int j){
+	*(vecDi + j) = di;
+	*(vecCod + j) = cod;
+	*(vecVia + j) = via;
+	*(vecCantidad + j) = cantidad;
+}
+	
+void informar(int *vD, char *vC, int *vV, int vCa, int i){
+	int j, acum=0, acum2=0;
+	printf("Ingrese codigo de centro turistico a, b o c\n");
+	fflush(stdin);
+	scanf("%c", codigoCentro);
+	
+  	for(j=0; j<i; j++){
+  		if(*(vC + j) == codigoCentro){
+  			if(*(vD + j) >= 15){
+  				acum=acum+*(vCa+j);
+			  }
+			  else {
+			  	acum2=acum2+*(vCa+j);
+			  }
+		  }
+		  if(*(vV + j) == 'a'){
+		  	acumt=acumt+()
+		  }
+	  }
+	  printf("la cantidad de turistas en la primer quincena son: %i\n", acum);
+	  printf("la cantidad de turistas en la segunda quincena son: %i\n", acum2);
+}
+
+main(){
+	int inicio, dia, viaAcceso, cantidadTuristas, vectorDia[31]={0}, vectorAcceso[31]={0}, vectorTuristas[31]={0}, i=0;
+	char codigoCentro, vectorCodigo[31]={0};
+	
+	
+	while(inicio != 3){
+		inicio=menu();
+		switch(inicio){
+			case 1:
+		    printf("Ingrese Dia\n");
+	        fflush(stdin);
+	        scanf("%i", dia);
+	        
+	        printf("Ingrese via de acceso\n");
+	        printf("1 = Auto\n");
+	        printf("2 = Avio\n");
+	        printf("3 = Micro\n");
+	        printf("4 = Tren\n");
+	        fflush(stdin);
+	        scanf("%i", viaAcceso);
+	        
+	        printf("Ingrese cantidad de turistas que ingresaron\n");
+	        fflush(stdin);
+	        scanf("%i", cantidadTuristas);
+	        
+	        guardar_datos(dia, codigoCentro, viaAcceso, cantidadTuristas, vectorDia, vectorCodigo, vectorAcceso, vectorTuristas, i);
+	        
+	        getch();
+	        system("CLS");
+	        break;
+	        
+	        case 2:
+	        break;
+	        
+	        case 3: 
+	        inicio = 3;
+	        break;
+	    }
+    }
+ }
