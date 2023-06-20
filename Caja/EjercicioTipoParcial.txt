@@ -1,0 +1,79 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+/*practico para el final caja */
+
+void informe(float *vMP){
+	float saldoInicial, saldo, j=0;
+	printf("ingrese saldo inicial de la caja\n");
+	fflush(stdin);
+	scanf("%f", &saldoInicial);
+	
+	saldo = saldoInicial;
+	for(j=0; j<31; j++){  
+	//saldoDeCajaPorDia = saldoDeCajaPorDia + *vMP;
+	saldo = saldo + *vMP;
+	
+	printf("el saldo de la caja del dia %d es : %f\n", j+1,*vMP);
+	}
+	
+	printf("el saldo de la caja al final del mes es: %f\n", saldo);
+}
+
+
+main(){
+	int menu, diaMes, posicionDia;
+	char codigoMovimiento;
+	float montoPesos, vectorMontoPesos[31]={0};
+	
+	while(menu != 3){
+		printf("Bienvenido seleccione una opcion\n");
+		printf("1 = Ingresar datos de Movimientos de Fondos\n");
+		printf("2 = Evaluacion de Cobranzas en RRHH\n");
+		printf("3 = Salir\n");
+		fflush(stdin);
+		scanf("%i", &menu);
+		
+		switch(menu){
+			case 1:
+				printf("Ingrese dia del mes\n");
+				fflush(stdin);
+				scanf("%i", &diaMes);
+				
+				printf("Ingrese codigo de movimiento\n");
+				printf("I = Ingreso de fondos\n");
+				printf("E = Egreso de fondos\n");
+				fflush(stdin);
+				scanf("%c", &codigoMovimiento);
+				
+				printf("Ingrese Monto en pesos del Movimiento\n");
+				fflush(stdin);
+				scanf("%f", &montoPesos);
+				
+				posicionDia = diaMes-1;  //posicion segun el dia
+				
+				if(codigoMovimiento == 'I'){
+				vectorMontoPesos[posicionDia] = vectorMontoPesos[posicionDia] + montoPesos;
+				}
+				else {
+				vectorMontoPesos[posicionDia] = vectorMontoPesos[posicionDia] - montoPesos;
+				}
+				
+				getch();
+				system("CLS");
+			break;
+			
+			case 2:
+				informe(vectorMontoPesos);
+				
+				getch();
+				system("CLS");
+			break;
+			         
+			case 3:
+				menu=3;
+			break;
+		}
+	}
+}
