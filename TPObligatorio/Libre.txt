@@ -1,0 +1,130 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+/*Trabajo Practico obligatorio N°1*/
+main(){
+	
+	float numeroDeLegajo, salarioMensual=0, valorHora, salario, valorAntiguedad, valorHoraNocturna, sueldoMaximo, legajoMaximo, faltas, promedio, acum=0, aumento,valorExtra,totalExtras,salarioquincena=0;
+	int horasExtras, horasNocturnas, antiguedad, horasTrabajadas, cont=0, bandera=0, i;
+	char presentismo, respuesta[3], categoria, nombre[20], apellido[10];
+	
+	printf("¿Desea registrar empleados? \n");
+	fflush(stdin);
+	scanf("%s", respuesta);
+	
+	while(strcmp(respuesta, "si")==0){
+		
+		printf("Ingrese nombre\n");
+		fflush(stdin);
+		scanf("%s", nombre);
+		
+		printf("Ingrese apellido\n");
+		fflush(stdin);
+		scanf("%s", apellido);
+		
+		strcat(nombre,apellido);
+		
+		printf("Ingrese numero de legajo\n");
+		fflush(stdin);
+		scanf("%f", &numeroDeLegajo);
+		
+		printf("Ingrese categoria\n");
+		fflush(stdin);
+		printf("c = Conductor \n");
+    	printf("m = Maestranza \n");
+    	printf("i = Inspeccion \n");
+		scanf("%c", &categoria);
+		
+		for (i=1; i<=2; i++)
+		{
+		printf("Ingrese horas trabajadas\n");
+		fflush(stdin);
+		scanf("%i", &horasTrabajadas);
+		
+		printf("Ingrese horas extra\n");
+		fflush(stdin);
+		scanf("%i", &horasExtras);
+		
+		printf("Ingrese horas nocturna\n");
+		fflush(stdin);
+		scanf("%i", &horasNocturnas);
+		
+			switch(categoria){
+		case 'c':aumento = (375*15)/100;
+				 valorHora = (375+aumento)*horasTrabajadas;
+		         valorExtra = ((375*50)/100);
+		         totalExtras = (375+valorExtra)*horasExtras;  
+		        break;
+		
+		case 'm':aumento = (250*15)/100;
+				 valorHora = (250+aumento)*horasTrabajadas;
+		         valorExtra=((250*50)/100);
+		         totalExtras = (250+valorExtra)*horasExtras;   
+		        break;
+		
+		case 'i':aumento = (280*15)/100;
+				 valorHora = (280+aumento)*horasTrabajadas;
+		         valorExtra = ((280*50)/100);
+		         totalExtras = (280+valorExtra)*horasExtras;
+		         break;
+		         
+	}
+		printf ("hora%2.f\n", valorHora);
+		printf ("extra%2.f\n", totalExtras);
+	
+		valorHoraNocturna = horasNocturnas*450;
+		salarioquincena=valorHora+totalExtras+valorHoraNocturna;
+		printf("El salario basico de la quincena es: %2.f\n", salarioquincena);  
+		salarioMensual += salarioquincena;
+	}
+		printf("Ingrese antiguedad\n");
+		fflush(stdin);
+		scanf("%i", &antiguedad);
+		valorAntiguedad=antiguedad*2000;
+		salario=salarioMensual+valorAntiguedad;
+		
+		printf("Ingrese presentismo\n");
+		fflush(stdin);
+		scanf("%c", &presentismo);
+		
+		if(presentismo =='s'){
+			salario = salario+1000;
+			faltas=0;
+		}
+		else {
+		printf("no le corresponde el presentismo\n");
+		printf("ingrese cantidad de faltas\n");
+		fflush(stdin);
+		scanf("%f", &faltas);
+		}
+		    
+			if(categoria =='c'){
+		
+			if(bandera==0){
+			sueldoMaximo = salario;
+			legajoMaximo = numeroDeLegajo;
+			bandera = 1;
+			}
+			else if(salario>sueldoMaximo){
+			sueldoMaximo = salario;
+			legajoMaximo = numeroDeLegajo;
+			}
+			}	
+	
+	printf("El nombre y apellido del empleado es: %s\n", nombre);
+	printf("La categoria de empleado es: %c\n", categoria);
+	printf("El sueldo obtenido en el mes es: %2.f\n", salario);
+	printf("La cantidad de faltas son: %2.f\n", faltas);
+	cont = cont+1;
+	acum = acum+salario;
+	
+	printf("¿Desea registrar empleados? \n");
+	fflush(stdin);
+	scanf("%s", respuesta);
+}
+    promedio = acum/cont;
+	printf("El sueldo maximo de los conductores es: %2.f\n", sueldoMaximo);
+	printf("El legajo del sueldo maximo es:: %2.f\n", legajoMaximo);
+	printf("El promedio de todos los sueldos es: %2.f\n", promedio);
+}
+
