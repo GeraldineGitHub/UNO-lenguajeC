@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+/*practico para el final arquero robot */
+
+void cargar_datos(int cooX, int cooY, int *vecCooX, int *vecCooY, int j){
+	*(vecCooX + j) = cooX;
+	*(vecCooY + j) = cooY;
+}
+
+void informe(int *vecX, int *vecY, int i){
+	int j=0, cont1=0, cont2=0;
+	for(j=0; j<i; j++){
+	if(((*(vecX + j)>=0) && (*(vecX + j)<= 500)) && ((*(vecY + j)>=0) && (*(vecY + j)<= 250))){
+		printf("Las coordenadas son: %i %i \n", *(vecX +j), *(vecY + j));
+		printf("GOL!!!\n");
+		cont1=cont1+1;
+	}
+	else{
+	printf("AFUERA!!\n");
+	cont2=cont2+1;
+	}
+	printf("la cantidad de goles son: %i\n", cont1);
+	printf("la cantidad de tiros afuera son: %i\n", cont2);
+}
+}
+
+main(){
+	int menu, coordenadaX, coordenadaY, vectorCoordenadaX[15]={0}, vectorCoordenadaY[15]={0}, i=0;
+	
+	while(menu != 3){
+		printf("Bienvenido seleccione una opcion\n");
+		printf("1 = Ingresar datos de tros al arco\n");
+		printf("2 = Evaluar las habilidades del arquero robot\n");
+		printf("3 = Salir\n");
+		fflush(stdin);
+		scanf("%i", &menu);
+		
+		switch(menu){
+			case 1:
+				printf("Ingrese coordenada X\n");
+				fflush(stdin);
+				scanf("%i", &coordenadaX);
+				
+				printf("Ingrese coordenada Y\n");
+				fflush(stdin);
+				scanf("%i", &coordenadaY);
+				
+				cargar_datos(coordenadaX, coordenadaY, vectorCoordenadaX, vectorCoordenadaY, i);
+				i=i+1;
+				
+				system("CLS");
+				getch();
+			break;
+			
+			case 2:
+				informe(vectorCoordenadaX, vectorCoordenadaY, i);
+			break;
+			
+			case 3:
+				menu=3;
+			break;
+		}
+	}
+}
