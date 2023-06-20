@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<conio.h>
+
+/*practico para el final control de velocidades */ 
+
+void guardo_datos(int h, int min, int vel, int cod, int *vecH, int *vecMin, int *vecVel, int *vecCod, int j){
+	*(vecH + j) = h;
+	*(vecMin + j) = min;
+	*(vecVel + j) = vel;
+	*(vecCod + j) = cod;
+}
+
+void informe(int *vH, int *vM, int *vV, int *vC, int i){
+	int j=0, max;
+	for(j=0; j<i; j++){
+			if(*(vC+j) == 2){
+			printf ("Hora: %i\n", *(vH+j));
+			printf ("Minutos: %i\n", *(vM+j));
+			printf ("Velocidad: %i\n", *(vV+j));
+			printf ("Codigo: %i\n", *(vC+j));
+			if(*(vV+j)>max){
+				max = *(vV+j);
+			}
+			}
+	}
+	printf ("La maxima velocidad del camion 2 fue: %i\n", max;
+}
+
+main(){
+	int menu, hora, minutos, velocidad, codigoCamion, vecHora[50]={0}, vecMinuto[50]={0}, vecVelocidad[50]={0}, vecCodigo[50]={0}, i=0;
+	
+	while(menu != 3){
+		printf("Bienvenido seleccione una opcion\n");
+		printf("1 = Ingresar y cargar vectores con datos de simulación\n");
+		printf("2 = Emitir reportes\n");
+		printf("3 = Salir\n");
+		fflush(stdin);
+		scanf("%i", &menu);
+		
+		switch(menu){
+			case 1:
+				printf("Ingrese hora\n");
+				fflush(stdin);
+				scanf("%i", &hora);
+				
+				printf("Ingrese minutos\n");
+				fflush(stdin);
+				scanf("%i", &minutos);
+				
+				printf("Ingrese velocidad\n");
+				fflush(stdin);
+				scanf("%i", &velocidad);
+				
+				printf("Ingrese codigo del camion\n");
+				fflush(stdin);
+				scanf("%i", &codigoCamion);
+				
+				guardo_datos(hora, minutos, velocidad, codigoCamion, vecHora, vecMinuto, vecVelocidad, vecCodigo, i);
+				i = i + 1;
+				
+				getch();
+				system("CLS");
+			break;
+			
+			case 2:
+				informe(vecHora, vecMinuto, vecVelocidad, vecCodigo, i);
+			break;
+			
+			case 3:
+				menu=3;
+			break;
+			
+	}
+}
+}
