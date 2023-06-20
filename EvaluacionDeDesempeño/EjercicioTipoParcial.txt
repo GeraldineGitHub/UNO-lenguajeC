@@ -1,0 +1,81 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+/*Evaluacion de desempeño Ej N°6*/
+int potencialDeDesarrollo(int calidadYcantidad, int cooperacion, int analisisYcreatividad){
+	if(calidadYcantidad>=4 && cooperacion>=4 && analisisYcreatividad>=4){
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+void cartel(int cod, int potencialDeDesarrollo){
+	if(potencialDeDesarrollo==1){
+	printf("Tiene capacidad de desarrollo\n");
+	printf("El codigo del empleado es: %i\n", cod);
+	}
+	else {
+		printf("No tiene capacidad de desarrollo\n");
+		printf("El codigo del empleado es: %i\n", cod);
+	}
+}
+main(){
+	float calificacionPromedio;
+	int codigo, diasTrabajados, calYcan, cooper, anaYcreat, resultado, cont=0, bandera=0, codigomax, diasTrabajadosmax;
+	char profesional[3], pregunta[3];
+	
+	printf("desea registrar empleados?\n");
+	fflush(stdin);
+	scanf("%s", pregunta);
+	
+	while(strcmp(pregunta, "si")==0){
+	
+	printf("Ingrese codigo de empleado\n");
+	fflush(stdin);
+	scanf("%i", &codigo);
+	if(bandera==0){
+		codigomax=codigo;
+		diasTrabajadosmax=diasTrabajados;
+		bandera==1;
+	}
+	else if(codigo>codigomax && diasTrabajados> diasTrabajadosmax){
+		codigomax=codigo;
+		diasTrabajadosmax=diasTrabajados;
+	}
+	
+	printf("Ingrese dias trabajados\n");
+	fflush(stdin);
+	scanf("%i", &diasTrabajados);
+	
+	printf("Ingrese si es profesional\n");
+	fflush(stdin);
+	scanf("%s", profesional);
+	if(strcmp(profesional,"si")==0){
+		printf("Ingrese la capacidad de analisis y creatividad\n");
+		fflush(stdin);
+		scanf("%i", &anaYcreat);
+		calificacionPromedio=(calYcan+cooper+anaYcreat)/3;
+		if(calificacionPromedio<3){
+		cont+=1;
+		}
+	}
+	
+	printf("Ingrese calidad y cantidad de trabajo\n");
+	fflush(stdin);
+	scanf("%i", &calYcan);
+	
+	printf("Ingrese cooperacion\n");
+	fflush(stdin);
+	scanf("%i", &cooper);
+	
+	resultado=potencialDeDesarrollo(calYcan, cooper, anaYcreat);
+	cartel(codigo,resultado);
+	
+	printf("desea registrar empleados?\n");
+	fflush(stdin);
+	scanf("%s", pregunta);
+}
+printf("La cantidad de empleados profesionales fuera de nivel son: %i\n", cont);
+printf("El codigo del empleado con mayor dias rabajados es: %i\n", codigomax);
+}
