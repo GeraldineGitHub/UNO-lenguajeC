@@ -1,0 +1,112 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<conio.h>
+
+/*practico para el final colectivo */
+
+void guardar_datos(int numeroParada, char codigoBarrio, int *vectorParada, char *vectorBarrio, int j){
+	*(vectorParada + j) = numeroParada;
+	*(vectorBarrio + j) = codigoBarrio;
+}
+
+void informe(int *vP, char *vB, int i){
+	int j, cont1=0, cont2=0, cont3=0, cont4=0, primerBarrioParada, ultimoBarrioParada, contTotal=0;
+	for(j=0; j<i; j++){
+		
+		contTotal=contTotal+1;
+		printf("Parada %i Barrio %c\n", *(vP+j), *(vB+j));
+		
+	//cuento cantidad de paradas por barrio
+	switch(*(vB + j)){
+		case 'l':
+			cont1=cont1+1;
+		break;
+		
+		case 'f':
+			cont2=cont2+1;
+		break;
+		
+		case 'c':
+			cont3=cont3+1;
+		break;
+		
+		case 'p':
+			cont4=cont4+1;
+		break;
+	}
+	
+	// ver si todas las paradas son del mismo barrio
+	
+	if(j == 0){
+		primerBarrioParada = *(vB + j);
+	}
+	if(j == i-1){
+		ultimoBarrioParada = *(vB + j);
+	}
+	}
+	printf("La cantidad de paradas del barrio liniers es %i\n", cont1);
+	printf("La cantidad de paradas del barrio flores es %i\n", cont2);
+	printf("La cantidad de paradas del barrio caballito es %i\n", cont3);
+	printf("La cantidad de paradas del barrio palermo es %i\n", cont4);
+	if(contTotal == cont1 || contTotal == cont2 || contTotal == cont3 || contTotal == cont4){
+		printf("Todas las paradas son del mismo barrio\n");
+	}
+	else {
+		printf("Todas las paradas NO son del mismo barrio\n");
+	}
+	if(primerBarrioParada == ultimoBarrioParada){
+		printf("Comienza y finaliza su recorrido en el mismo barrio %c\n", primerBarrioParada);
+	}
+	else {
+		printf("NO comienza y finaliza su recorrido en el mismo barrio\n");
+	}
+}
+
+main(){
+	int menu, parada, vectorNumParada[15]={0}, i=0 ;
+	char barrio, vectorCodBarrio[15]={0};
+	
+	while(menu != 3){
+		printf("Bienvenido seleccione una opcion\n");
+		printf("1 = Ingresar datos de paradas de la línea de colectivos\n");
+		printf("2 = Consultas de la información sobre la línea de colectivos\n");
+		printf("3 = Salir\n");
+		fflush(stdin);
+		scanf("%i", &menu);
+		
+		switch(menu){
+			case 1:
+				printf("Ingrese parada de colectivo\n");
+				fflush(stdin);
+				scanf("%i", &parada);
+			
+				if(parada >= 1 && parada <= 3){
+					barrio = 'l';
+				}
+	            else if(parada >=4 && parada <=5){
+	            	parada = 'f';
+				}
+				else if(parada >= 6 && parada <= 7){
+					barrio = 'c';
+				}
+				else if(parada >= 8 && parada <= 10){
+					barrio = 'p';
+				}
+				
+				guardar_datos(parada, barrio, vectorNumParada, vectorCodBarrio, i);
+				i++;
+				
+				getch();
+				system("CLS");
+			break;
+			
+			case 2:
+				informe(vectorNumParada, vectorCodBarrio, i);
+			break;
+			
+			case 3:
+			menu=3;
+			break;
+			}
+		}
+	}
