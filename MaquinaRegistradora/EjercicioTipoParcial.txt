@@ -1,0 +1,117 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<conio.h>
+
+/*practico para el final maquina registradora */ 
+
+float calculo(float nX, float nY, char operando){
+	float resultado;
+	if(operando == 's'){
+		resultado = nX+nY;
+	}
+	else if (operando == 'r'){
+		if(nX>nY){
+			resultado = nX - nY;
+		}
+		else {
+			resultado = nY - nX;
+		}
+	}
+	else if (operando == 'm'){
+		resultado = nX * nY;
+	}
+	else if (operando == 'd'){
+		if(nY != 0 && nX > nY && nX != 0){
+			resultado = nX/nY;
+		}
+	else {
+		resultado = nY/nX;
+	}
+	}
+	return resultado;
+}
+
+void cargar_datos(float x, float y, char op, float *vecX, float *vecY, char *vecOP, int j){
+	*(vecX + j) = x;
+	*(vecY + j) = y;
+	*(vecOP + j) = op;
+}
+
+void informe(float *vecX, float *vecY, char *vecOP, int i){
+	int cont1=0, cont2=0, cont3=0, cont4=0, j=0;
+	
+	for(j=0; j<i; j++){
+	printf("El primer numero %f el segundo numero %f y la operacion es %c \n", *(vecX + j), *(vecY + j), *(vecOP + j));
+	if(*(vecOP + j) == 's'){
+		cont1 = cont1 + 1;
+	}
+	else if(*(vecOP + j) == 'r'){
+		cont2 = cont2 +1;
+	}
+	else if(*(vecOP + j) == 'm'){
+		cont3 = cont3 +1;
+	}
+	else if(*(vecOP + j) == 'd'){
+		cont4 = cont4 +1;
+	}
+}
+printf("La cantidada de sumas son: %i\n", cont1);
+printf("La cantidada de resta son: %i\n", cont2);
+printf("La cantidada de multiplicacion son: %i\n", cont3);
+printf("La cantidada de divicion son: %i\n", cont4);
+}
+
+
+main(){
+	int i=0;
+	float numeroX, numeroY, vectorX[15]={0}, vectorY[15]={0};
+	char operacion, vectorOP[15]={0}, menu;
+	
+	while(menu != 'C'){
+		printf("Bienvenido seleccione una opcion\n");
+		printf("A = Efectuar calculos\n");
+		printf("B = Emitir informes de las operaciones efectuadas en el dia\n");
+		printf("C = Salir\n");
+		fflush(stdin);
+		scanf("%c", &menu);
+		
+		switch(menu){
+			case 'A':
+				printf("Ingrese primer numero\n");
+				fflush(stdin);
+				scanf("%f", &numeroX);
+				
+				printf("Ingrese segundo numero\n");
+				fflush(stdin);
+				scanf("%f", &numeroY);
+				
+				printf("Ingrese operacion\n");
+				printf("s = SUMA \n");
+				printf("r = RESTA\n");
+				printf("m = MULTIPLICACION\n");
+				printf("d = DIVICION\n");
+				fflush(stdin);
+				scanf("%c", &operacion);
+				
+				// 1
+				calculo (numeroX, numeroY, operacion);
+				
+				//2
+				cargar_datos(numeroX, numeroY, operacion, vectorX, vectorY, vectorOP, i);
+				
+				i++;
+				
+				getch();
+				system("CLS");
+			break;
+			
+			case 'B':
+				informe(vectorX, vectorY, vectorOP, i);
+			break;
+			
+			case 'C':
+				menu = 'C';
+			break;
+		}
+	}
+}
